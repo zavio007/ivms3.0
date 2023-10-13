@@ -15,10 +15,9 @@ const Dashboard = () => {
           {/* Dashboard Widgets */}
           <Grid item xs={12} sm={6} md={4}>
             {/* Your first widget content */}
+
             <Card>
-              <video>
-                
-              </video>
+            <video width="400"  src="mov_bbb.mp4" />
             </Card>
           </Grid>
           <Grid item xs={12} sm={6} md={4}>

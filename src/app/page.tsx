@@ -1,20 +1,14 @@
-import Image from 'next/image'
-import styles from "./style.module.scss"
-import { TextField } from '@mui/material'
+"use client"
+import Image from "next/image";
+import styles from "./style.module.scss";
+import { TextField } from "@mui/material";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
-  return (
-    <main>
-        <TextField
-                margin="normal"
-                required
-                fullWidth
-                id="email"
-                label="Email Address"
-                name="email"
-                autoComplete="email"
-                autoFocus
-              />
-    </main>
-  )
+  const router = useRouter();
+  useEffect(() => {
+    router.push("/login");
+  }, [router]);
+  return null
 }
