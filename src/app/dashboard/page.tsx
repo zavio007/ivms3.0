@@ -10,13 +10,20 @@ import SimpleLineChart from "@/components/LineChartDash/page";
 
 const Dashboard = () => {
   let videoSrc = "http://80.13.46.193:2503/mjpg/video.mjpg";
+  const shadowStyle = {
+    borderRadius: '10px',
+    paddinf:'2rem',
+    background: 'linear-gradient(145deg, #cacaca, #f0f0f0)',
+    boxShadow: ' 20px 20px 60px #bebebe,  -20px -20px 60px #ffffff',
+  };
+  
   return (
     <div>
       <LayoutDash>
         <>
           <Grid container spacing={3} p={2}>
             <Grid item lg={6} xs={12}>
-              <Card>
+              <Card style={shadowStyle}>
                 <div className={styles.dFlex}>
                   <Image
                     src={videoSrc}
@@ -52,7 +59,7 @@ const Dashboard = () => {
             </Grid>
 
             <Grid item xs={12} lg={6} spacing={2}>
-              <Card sx={{ height: "48%", width: "99%" }}>
+              <Card sx={{ height: "48%", width: "99%" }} style={shadowStyle}>
                 <SimpleLineChart />
               </Card>
               <Box
@@ -63,7 +70,7 @@ const Dashboard = () => {
                   height: "100%",
                 }}
               >
-                <Card sx={{ marginTop: "2%", height: "50%", width: "49%" }}>
+                <Card sx={{ marginTop: "1%", height: "50%", width: "49%" }} style={shadowStyle}>
                   <div className={styles.contentBar}>
                     <h3> Analytics: </h3>
                     <ul>
@@ -73,7 +80,7 @@ const Dashboard = () => {
                     </ul>
                   </div>
                 </Card>
-                <Card sx={{ marginTop: "2%", height: "50%", width: "49%" }}>
+                <Card sx={{ marginTop: "1%", height: "50%", width: "49%" }} style={shadowStyle}>
                   <div className={styles.contentBar}>
                     <h3> Open Alert: </h3>
                     <ul>

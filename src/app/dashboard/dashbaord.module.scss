@@ -12,6 +12,7 @@
         display: flex;
         gap: .5rem;
         align-items: center;
+        
         a{
 
         
@@ -40,6 +41,7 @@
         align-items: center;
         width: 100%;
         gap: .5rem;
+        
        
     }
 
@@ -50,9 +52,13 @@
     align-items: center;
     width: 100%;
     gap: .45rem;
+    padding: 1rem;
+  font-family: "Roboto", sans-serif !important;
+
     img{
         width: 100%;
         object-fit: cover;
+        border-radius: 9px;
     }
    
 }
@@ -71,6 +77,8 @@
             display: flex;
             align-items: center;
             gap: .5rem;
+  font-family: "Roboto", sans-serif !important;
+
             .warning{
                 display: block;
                 width: 15px;
