@@ -6,13 +6,10 @@ import TextField from "@mui/material/TextField";
 import Checkbox from "@mui/material/Checkbox";
 import LayoutDash from "@/components/LayoutDash/page";
 import Card from "@mui/material/Card";
-import { Button, FormControlLabel, FormGroup, Grid, Typography } from "@mui/material";
+import { FormControlLabel, FormGroup, Typography } from "@mui/material";
 import styles from "./addcamera.module.scss";
-import DoneIcon from "@mui/icons-material/Done";
-import DoneAllIcon from "@mui/icons-material/DoneAll";
 import TaskAltIcon from "@mui/icons-material/TaskAlt";
 import AddTaskIcon from "@mui/icons-material/AddTask";
-import DragAndResizeBox from "@/components/DragAndResizeBox/page";
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 

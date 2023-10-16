@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ReactLassoSelect from "react-lasso-select";
+import Slider from "@mui/material/Slider";
 
 interface Point {
   x: number;
@@ -15,6 +16,7 @@ function pointsToString(points: Point[]): string {
 }
 const DragAndResizeBox: React.FC<DragAndResizeBoxProps> = ({ videoSrc }) => {
   const [src] = useState<string>(videoSrc); // Corrected image URL
+  const [width, setWidth] = useState(500); // Set an initial value
 
   console.log(videoSrc,"videsrc");
   
@@ -23,7 +25,7 @@ const DragAndResizeBox: React.FC<DragAndResizeBoxProps> = ({ videoSrc }) => {
     width: 0,
     height: 0,
   });
-  const [width, setWidth] = useState<number>(500);
+  // const [width, setWidth] = useState<number>(500);
   const init = "172,173 509,99 458,263"
     .split(" ")
     .map((c) => c.split(",").map(Number))
@@ -48,7 +50,7 @@ const DragAndResizeBox: React.FC<DragAndResizeBoxProps> = ({ videoSrc }) => {
         }}
       />
       <br />
-      Image width:{" "}
+      {/* Image width:{" "}
       <input
         type="range"
         min="0"
@@ -57,9 +59,23 @@ const DragAndResizeBox: React.FC<DragAndResizeBoxProps> = ({ videoSrc }) => {
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
           setWidth(+e.target.value)
         }
+      /> */}
+
+<div>
+      <Slider
+        value={width}
+        min={0}
+        max={1000}
+        onChange={(_event, newValue) => setWidth(newValue as number)}
       />
+      <p>Image Width: {width}</p>
+    </div>
+
       <br />
-      Points: {pointsToString(points)}
+      Points:
+      <div style={{ display:'flex' }}>
+      {pointsToString(points)}
+      </div>
       <br />
       <svg
         viewBox={`0 0 ${img.width} ${img.height}`}
