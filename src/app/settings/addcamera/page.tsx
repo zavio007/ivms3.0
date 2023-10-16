@@ -157,7 +157,6 @@ export default function BasicTextFields() {
       </div>
        
       </Box>
-      <DragAndResizeBox/>
      
     </LayoutDash>
   );
