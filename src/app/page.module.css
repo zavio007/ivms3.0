@@ -2,11 +2,14 @@
 
 html,
 body {
-  background-color: azure;
+  /* background-color: azure; */
+  /* background: #e0e0e0; */
+  background: linear-gradient(145deg, #cacaca, #f0f0f0);
+
   height: 100vh;
   font-family: "Archivo Black", sans-serif;
   font-family: "Mulish", sans-serif;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif !important;
 }
 .dFlex {
   display: flex;

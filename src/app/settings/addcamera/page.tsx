@@ -12,6 +12,7 @@ import DoneIcon from "@mui/icons-material/Done";
 import DoneAllIcon from "@mui/icons-material/DoneAll";
 import TaskAltIcon from "@mui/icons-material/TaskAlt";
 import AddTaskIcon from "@mui/icons-material/AddTask";
+import DragAndResizeBox from "@/components/DragAndResizeBox/page";
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
@@ -156,6 +157,7 @@ export default function BasicTextFields() {
       </div>
        
       </Box>
+      <DragAndResizeBox/>
      
     </LayoutDash>
   );

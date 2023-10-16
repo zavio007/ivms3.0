@@ -13,6 +13,7 @@ import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import StopCircleIcon from "@mui/icons-material/StopCircle";
 
 import { log } from "console";
+import ModalMui from "@/components/ModalMui/page";
 
 const Settings = () => {
   const Item = styled(Paper)(({ theme }) => ({
@@ -28,6 +29,7 @@ const Settings = () => {
     setStart(!start);
   };
   console.log(start);
+ 
 
   return (
     <div>
@@ -79,51 +81,14 @@ const Settings = () => {
                       )}
                     </div>
                   </div>
-                </div>
-              </div>
-            </Grid>
-            <Grid xs={12} lg={12}>
-              <div className={styles.gridOne}>
-                <div className={styles.listItem}>
-                  <div className={styles.one}>
-                    <Typography> SI No : 1 </Typography>
-                  </div>
-                  <div className={styles.one}>
-                    <Typography>
-                      {" "}
-                      <span>Name :</span> Terrace Cam
-                    </Typography>
-                  </div>
-                  <div className={styles.one}>
-                    <Typography>
-                      {" "}
-                      <span>IP :</span> http://localhost:3000/settings
-                    </Typography>
-                  </div>
-                  <div className={styles.one}>
-                    <Typography>
-                      {" "}
-                      <span>Location :</span> Kozhikode
-                    </Typography>
-                  </div>
                   <div>
-                    <div>
-                      {start ? ( // If start is true, render the "Stop" button
-                        <Button variant="outlined" onClick={startFn}  color="error">
-                          <StopCircleIcon />
-                        </Button>
-                        
-                      ) : (
-                        // If start is false, render the "Start" button
-                        <Button variant="outlined" onClick={startFn} color="success">
-                          <PlayArrowIcon />
-                        </Button>
-                      )}
-                    </div>
+                  <ModalMui srcImage="http://80.13.46.193:2503/mjpg/video.mjpg" 
+                  modalName="View" modal_Head="videoName" modalDesc="lorem ipsum content update"/>
                   </div>
                 </div>
               </div>
             </Grid>
+           
           </Grid>
         </Container>
       </LayoutDash>
