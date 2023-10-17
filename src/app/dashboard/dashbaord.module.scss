@@ -65,6 +65,8 @@
 .contentBar{
     padding: 1rem;
     height: 100%;
+    width: 100%;
+    margin: 1rem;
     h3{
         font-family: roboto;
         margin-bottom: 2rem;
@@ -97,4 +99,194 @@
 
         }
     }
+}
+.anomaliesCard{
+    @extend .contentBar;
+    padding: .2rem;
+
+    ul{
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        margin: 0;
+        li{
+            width: 43%;
+            padding: 1rem .51rem;
+            border-radius: 6px;
+            display: flex;
+            // border: 1px solid #ccc;
+            background:#e0e0e0;
+            box-shadow: 20px 20px 60px #a7a5a5,  20px 20px 60px #ffffff;
+            span{
+                font-weight: 600;
+            }
+        }
+    }
+
+    
+
+  .check {
+    border-radius: 5px;
+    width: 220px;
+    height: 30px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #2B3246;
+    cursor:pointer;
+    box-shadow:  9px 9px 18px #262c3e,
+      -9px -9px 18px #30384e;
+    color: #0ad406;
+    margin: 20px;
+  }
+  .check:hover{
+    background-color: rgba(147, 209, 117, 0.50);
+    transition:0.5s;
+  }
+  
+  .color {
+    animation: color 2s linear infinite;
+  }
+  
+  
+  .info {
+    border-radius: 5px;
+    width: 220px;
+    height: 30px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #2B3246;
+    cursor:pointer;
+    box-shadow:  9px 9px 18px #262c3e,
+      -9px -9px 18px #30384e;
+    color: rgb(82, 125, 243);
+    margin: 20px;
+  }
+  
+  .spin {
+    animation: spin 2s linear infinite;
+  }
+  
+  .info:hover
+  {
+    background-color: rgba(82, 125, 243, 0.50);
+    transition:0.5s;
+  }
+  
+  .warning {
+    border-radius: 5px;
+    width: 220px;
+    height: 30px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #2B3246;
+    cursor:pointer;
+    box-shadow:  9px 9px 18px #262c3e,
+      -9px -9px 18px #30384e;
+    color: rgb(247, 149, 72);
+    margin: 20px;
+  }
+  
+  .warning:hover{
+    background-color: rgba(247, 149, 73, 0.50);
+    transition:0.5s;
+  }
+  
+  
+  .rotate {
+    animation: rotate 2s linear infinite;
+  }
+  .danger {
+    border-radius: 5px;
+    width: 220px;
+    height: 30px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #2B3246;
+    cursor:pointer;
+    box-shadow:  9px 9px 18px #262c3e,
+      -9px -9px 18px #30384e;
+    color: rgb(255, 10, 1);
+    margin: 20px;
+  }
+  
+  .danger:hover
+  {
+    background-color: rgba(255, 10, 1, 0.33);
+    transition:0.5s;
+  }
+  
+  
+  .shine {
+    animation: shine 2s linear infinite;
+  }
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+     transform: scale(1);
+    }
+    50% {
+      transform: rotate(0deg);
+    }
+    100% {
+        transform: scale(1.1);
+        transform: rotate(360deg);
+        color: #a96b01;
+    }
+  }
+  
+  @keyframes color {
+    50% {
+     color: #2B3246;
+    }
+    100% {
+      color: #d1ca00;
+    }
+  }
+  
+  @keyframes rotate {
+   0% {
+      transform: rotate(0deg);
+    }
+   
+    40% {
+      transform: rotate(-90deg);
+      color: #0674d4;
+
+    }
+    80% {
+      transform: rotate(0deg);
+    }
+  }
+  
+  @keyframes shine {
+    0% {
+     color: #2B3246;
+     transform: scale(1.1);
+    }
+    50% {
+     transform: scale(1);
+     color: #d40606;
+
+    //   text-shadow:
+    //     0 0 5px #fff,
+    //     0 0 10px #fff,
+    //     0 0 40px red,
+    //     0 0 60px red,
+    //     0 0 80px red;
+    }
+    100%{
+     transform: scale(1.1);
+
+    }
+  }
 }

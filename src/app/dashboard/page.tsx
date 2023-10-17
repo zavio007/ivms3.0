@@ -4,19 +4,26 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import styles from "./dashbaord.module.scss";
 import LayoutDash from "../../components/LayoutDash/page";
-import { Box, Card } from "@mui/material";
+import { Box, Card, Typography } from "@mui/material";
 import Image from "next/image";
 import SimpleLineChart from "@/components/LineChartDash/page";
+import PrivacyTipIcon from "@mui/icons-material/PrivacyTip";
+import Groups2Icon from '@mui/icons-material/Groups2';
+import EmergencyRecordingIcon from '@mui/icons-material/EmergencyRecording';
+import MissedVideoCallIcon from '@mui/icons-material/MissedVideoCall';
+import TableDash from "@/components/TableDash/page";
+import { CardHeader } from '@mui/material';
+
 
 const Dashboard = () => {
   let videoSrc = "http://80.13.46.193:2503/mjpg/video.mjpg";
   const shadowStyle = {
-    borderRadius: '10px',
-    paddinf:'2rem',
-    background: 'linear-gradient(145deg, #cacaca, #f0f0f0)',
-    boxShadow: ' 20px 20px 60px #bebebe,  -20px -20px 60px #ffffff',
+    borderRadius: "10px",
+    paddinf: "2rem",
+    background: "#e0e0e0",
+    boxShadow: " 20px 20px 60px #bebebe,  -20px -20px 60px #ffffff",
   };
-  
+
   return (
     <div>
       <LayoutDash>
@@ -70,21 +77,54 @@ const Dashboard = () => {
                   height: "100%",
                 }}
               >
-                <Card sx={{ marginTop: "1%", height: "50%", width: "49%" }} style={shadowStyle}>
-                  <div className={styles.contentBar}>
-                    <h3> Analytics: </h3>
+                <Card
+                  sx={{ marginTop: "1%", height: "50%", width: "49%" }}
+                  style={shadowStyle}
+                >
+                  <div className={styles.anomaliesCard}>
+                    <h3> Anomalies: </h3>
+
                     <ul>
-                      <li> No of people</li>
-                      <li> No of Male</li>
-                      <li> No of Female</li>
+                      <li>
+                        <span className={styles.color}>
+                          <PrivacyTipIcon />
+                        </span>
+                        10 Securities Unvavailable
+                      </li>
+                      <li>
+                        <span className={styles.shine}>
+                          <Groups2Icon/>
+                        </span>
+                        10  Crowding Detected
+                      </li>
+                      <li>
+                        <span className={styles.rotate}>
+                          <MissedVideoCallIcon />
+                        </span>
+                        10  Crowding Detected
+                      </li>
+                      <li>
+                        <span className={styles.spin}>
+                          <EmergencyRecordingIcon/>
+                        </span>
+                        10  Crowding Detected
+                      </li>
+                   
+                     
+
+                    
                     </ul>
                   </div>
                 </Card>
-                <Card sx={{ marginTop: "1%", height: "50%", width: "49%" }} style={shadowStyle}>
+
+                <Card
+                  sx={{ marginTop: "1%", height: "50%", width: "49%" }}
+                  style={shadowStyle}
+                >
                   <div className={styles.contentBar}>
                     <h3> Open Alert: </h3>
                     <ul>
-                      <li>
+                      {/* <li>
                         <span className={styles.warning}></span> ALert One
                       </li>
                       <li>
@@ -92,13 +132,25 @@ const Dashboard = () => {
                       </li>
                       <li>
                         <span className={styles.sucess}></span> ALert One
-                      </li>
+                      </li> */}
                     </ul>
                   </div>
                 </Card>
               </Box>
             </Grid>
+
+          
           </Grid>
+          <Grid item lg={12}>
+            <Card
+                  sx={{ margin: "1rem", height: "50%", width: "98%" }}
+                  style={shadowStyle}
+                >
+                  <Typography sx={{ padding:'1rem', background:'#fff', fontWeight:'700' }}> Anomalies </Typography>
+                  <TableDash/>
+
+                </Card>
+            </Grid>
         </>
       </LayoutDash>
     </div>
