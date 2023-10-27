@@ -12,7 +12,7 @@ const WebSocketComponent: React.FC<WebSocketComponent> = ({
   const [videoFrame2, setVideoFrame2] = useState("");
   const [personCount, setPersonCount] = useState(0);
   const [urlInput, setUrlInput] = useState(
-    "http://95.161.27.60/mjpg/video.mjpg"
+    "https://webcam.sparkassenplatz.info/cgi-bin/faststream.jpg"
   );
   //   const [pointsInput, setPointsInput] = useState('147,470 113,276 627,108 626,467');
   const [optionsVisible, setOptionsVisible] = useState(true);

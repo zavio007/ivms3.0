@@ -83,7 +83,7 @@ const Settings = () => {
                     </div>
                   </div>
                   <div>
-                  <ModalMui srcImage="http://95.161.27.60/mjpg/video.mjpg" 
+                  <ModalMui srcImage="https://webcam.sparkassenplatz.info/cgi-bin/faststream.jpg" 
                   modalName="View" modal_Head="videoName" modalDesc="lorem ipsum content update"/>
                   </div>
                   <div>
