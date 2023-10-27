@@ -14,6 +14,7 @@ import StopCircleIcon from "@mui/icons-material/StopCircle";
 
 import { log } from "console";
 import ModalMui from "@/components/ModalMui/page";
+import WebSocketComponent from "@/components/WebSocketComponent/page";
 
 const Settings = () => {
   const Item = styled(Paper)(({ theme }) => ({
@@ -82,8 +83,10 @@ const Settings = () => {
                     </div>
                   </div>
                   <div>
-                  <ModalMui srcImage="http://80.13.46.193:2503/mjpg/video.mjpg" 
+                  <ModalMui srcImage="http://95.161.27.60/mjpg/video.mjpg" 
                   modalName="View" modal_Head="videoName" modalDesc="lorem ipsum content update"/>
+                  </div>
+                  <div>
                   </div>
                 </div>
               </div>

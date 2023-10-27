@@ -10,6 +10,7 @@ import { Image } from "react-bootstrap";
 import DragAndResizeBox from "../DragAndResizeBox/page";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
+import WebSocketComponent from "../WebSocketComponent/page";
 
 interface ModalMuiProps {
   modalName: string; // Specify the prop type
@@ -58,13 +59,16 @@ const ModalMui: React.FC<ModalMuiProps> = ({
             justifyContent:'center',
             alignItems:'center',
             width:'100%',
-            minWidth:'900px',
             flexDirection:'column'
         }}>
           <DialogContentText>{modalDesc}</DialogContentText>
           <Box>
             <DragAndResizeBox videoSrc={srcImage} />
           </Box>
+
+          <div>
+          {/* <WebSocketComponent/> */}
+          </div>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Close</Button>

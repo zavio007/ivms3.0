@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Video Streaming</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #video-frame {
+            max-width: 100%;
+            border: 1px solid #ccc;
+            margin: 10px auto;
+        }
+        #count-display {
+            font-size: 24px;
+            margin-top: 10px;
+        }
+        #options {
+            margin: 10px auto;
+            max-width: 400px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #F9F9F9;
+        }
+        .hidden {
+            display: none;
+        }
+        #url, #points {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+        }
+        #start-button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Real Frame</h1>
+    <img id="video-frame" src="" alt="Video Frame" />
+    <h1>Roi Frame</h1>
+    <img id="mvideo-frame" src="" alt="Video Frame" />
+    <div id="count-display">Person Count: <span id="person-count">0</span></div>
+    <div id="options">
+        <label for="url">Video URL:</label>
+        <input type="text" id="url" value="http://78.152.125.150:8200/cgi-bin/faststream.jpg"><br>
+        <label for="points">ROI Points:</label>
+        <input type="text" id="points" value="147,470 113,276 627,108 626,467"><br>
+        <button id="start-button">Start Streaming</button>
+    </div>
+    <script>
+        const videoFrame = document.getElementById("video-frame");
+        const videoFrame2 = document.getElementById("mvideo-frame");
+        const personCount = document.getElementById("person-count");
+        const urlInput = document.getElementById("url");
+        const pointsInput = document.getElementById("points");
+        const startButton = document.getElementById("start-button");
+        const optionsDiv = document.getElementById("options");
+        const wsProtocol = window.location.protocol === "https:" ? "wss" : "ws";
+        const ws = new WebSocket('ws://' + '65.108.149.173:8000' + '/ws/video/');
+        startButton.addEventListener("click", () => {
+            const message = {
+                command: "start",
+                url: urlInput.value,
+                points: pointsInput.value
+            };
+            ws.send(JSON.stringify(message));
+            // Hide the options after starting streaming
+            optionsDiv.classList.add("hidden");
+        });
+        ws.onmessage = (event) => {
+            const frameData = JSON.parse(event.data);
+            console.log(frameData)
+            videoFrame.src = `data:image/jpeg;base64, ${frameData.image}`;
+            videoFrame2.src = `data:image/jpeg;base64, ${frameData.masked_image}`;
+            personCount.textContent = frameData.count;
+        }
+    </script>
+</body>
+</html>

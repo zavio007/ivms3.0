@@ -8,15 +8,14 @@ import { Box, Card, Typography } from "@mui/material";
 import Image from "next/image";
 import SimpleLineChart from "@/components/LineChartDash/page";
 import PrivacyTipIcon from "@mui/icons-material/PrivacyTip";
-import Groups2Icon from '@mui/icons-material/Groups2';
-import EmergencyRecordingIcon from '@mui/icons-material/EmergencyRecording';
-import MissedVideoCallIcon from '@mui/icons-material/MissedVideoCall';
+import Groups2Icon from "@mui/icons-material/Groups2";
+import EmergencyRecordingIcon from "@mui/icons-material/EmergencyRecording";
+import MissedVideoCallIcon from "@mui/icons-material/MissedVideoCall";
 import TableDash from "@/components/TableDash/page";
-import { CardHeader } from '@mui/material';
-
+import { CardHeader } from "@mui/material";
 
 const Dashboard = () => {
-  let videoSrc = "http://80.13.46.193:2503/mjpg/video.mjpg";
+  let videoSrc = "http://78.152.125.150:8200/cgi-bin/faststream.jpg";
   const shadowStyle = {
     borderRadius: "10px",
     paddinf: "2rem",
@@ -93,26 +92,22 @@ const Dashboard = () => {
                       </li>
                       <li>
                         <span className={styles.shine}>
-                          <Groups2Icon/>
+                          <Groups2Icon />
                         </span>
-                        10  Crowding Detected
+                        10 Crowding Detected
                       </li>
                       <li>
                         <span className={styles.rotate}>
                           <MissedVideoCallIcon />
                         </span>
-                        10  Crowding Detected
+                        10 Crowding Detected
                       </li>
                       <li>
                         <span className={styles.spin}>
-                          <EmergencyRecordingIcon/>
+                          <EmergencyRecordingIcon />
                         </span>
-                        10  Crowding Detected
+                        10 Crowding Detected
                       </li>
-                   
-                     
-
-                    
                     </ul>
                   </div>
                 </Card>
@@ -124,33 +119,35 @@ const Dashboard = () => {
                   <div className={styles.contentBar}>
                     <h3> Open Alert: </h3>
                     <ul>
-                      {/* <li>
+                      <li>
                         <span className={styles.warning}></span> ALert One
                       </li>
                       <li>
                         <span className={styles.danger}></span> ALert One
                       </li>
                       <li>
-                        <span className={styles.sucess}></span> ALert One
-                      </li> */}
+                        <span className={styles.black}></span> ALert One
+                      </li>
                     </ul>
                   </div>
                 </Card>
               </Box>
             </Grid>
-
-          
           </Grid>
           <Grid item lg={12}>
             <Card
-                  sx={{ margin: "1rem", height: "50%", width: "98%" }}
-                  style={shadowStyle}
-                >
-                  <Typography sx={{ padding:'1rem', background:'#fff', fontWeight:'700' }}> Anomalies </Typography>
-                  <TableDash/>
-
-                </Card>
-            </Grid>
+              sx={{ margin: "1rem", height: "50%", width: "98%" }}
+              style={shadowStyle}
+            >
+              <Typography
+                sx={{ padding: "1rem", background: "#fff", fontWeight: "700" }}
+              >
+                {" "}
+                Anomaly List{" "}
+              </Typography>
+              <TableDash />
+            </Card>
+          </Grid>
         </>
       </LayoutDash>
     </div>
