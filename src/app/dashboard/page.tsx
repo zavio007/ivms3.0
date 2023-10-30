@@ -15,7 +15,7 @@ import TableDash from "@/components/TableDash/page";
 import { CardHeader } from "@mui/material";
 
 const Dashboard = () => {
-  let videoSrc = "http://78.152.125.150:8200/cgi-bin/faststream.jpg";
+  let videoSrc = "https://webcam.sparkassenplatz.info/cgi-bin/faststream.jpg";
   const shadowStyle = {
     borderRadius: "10px",
     paddinf: "2rem",
