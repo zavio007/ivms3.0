@@ -1,0 +1,21 @@
+{
+    "deployments": [
+      {
+        "name": "MyAppDeployment",
+        "type": "webapp",
+        "config": {
+          "sourceDir": "build",
+          "distributionDir": "dist",
+          "buildCommand": "npm run build",
+          "startCommand": "npm start",
+          "environmentVariables": {
+            "NODE_ENV": "production"
+          },
+          "customHeaders": {
+            "Cache-Control": "max-age=604800"
+          }
+        }
+      }
+    ]
+  }
+  
