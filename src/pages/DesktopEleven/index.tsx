@@ -3,14 +3,10 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { Button, Img, Input, Line, List, Text } from "components";
-import {
-  DesktopElevenColumnOne,
-  DesktopElevenColumnOne1,
-  DesktopElevenRowcar,
-  DesktopElevenRowvector,
-} from 'components/4button';
+
 import { CloseSVG } from "../../assets/images";
 import Dashboard from "components/Dashboard";
+import RadioButtons from "components/4button";
 type DesktopElevenColumnOneProps = Omit<
   React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>,
   "manufacturing" | "language"
@@ -252,15 +248,7 @@ const DesktopElevenPage: React.FC = () => {
                       </>
                     </Text>
                   </div>
-                  <List
-  className="sm:flex-col flex-row md:gap-10 gap-[74px] grid sm:grid-cols-1 md:grid-cols-2 grid-cols-4 justify-center ml-1.5 md:ml-[0] mt-[26px] w-[99%]"
-  orientation="horizontal"
->
-  <DesktopElevenColumnOne manufacturing="Manufacturing" language="" />
-  <DesktopElevenRowvector shipping ="Shipping" language="" />
-  <DesktopElevenRowcar roadTransport="Road Transport" language="" />
-  <DesktopElevenColumnOne1 airline="Airline" language="" />
-</List>
+                 <RadioButtons/>
                   <Line className="bg-gray-200 h-px mr-[3px] mt-[45px] w-full" />
                   <Button
                     className="common-pointer !rounded-[55px] !text-white-A700 bg-colors2 cursor-not-allowed font-semibold leading-[normal] min-h-[50px] md:ml-[0] ml-[1364px] mt-7 opacity-op text-base text-center w-[220px]"

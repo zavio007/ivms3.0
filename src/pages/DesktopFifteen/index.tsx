@@ -12,13 +12,6 @@ import Dashboard from "components/Dashboard";
 import { CloseSVG } from "../../assets/images";
 import DragAndResizeBox from "components/DragAndResizeBox"; // Adjust the path based on your project structure
 // import DesktopElevenColumnOne from 'components/DesktopElevenColumnOne';
-import {
-  DesktopElevenColumnOne,
-  DesktopElevenColumnOne1,
-  DesktopElevenRowcar,
-  DesktopElevenRowvector,
-} from 'components/4button';
-
 const DesktopFifteenPage: React.FC = () => {
   const navigate = useNavigate();
   const [croppedImage, setCroppedImage] = useState<string | null>(null);
@@ -187,15 +180,6 @@ const DesktopFifteenPage: React.FC = () => {
                   </>
                 </Text>
               </div>
-              <List
-  className="sm:flex-col flex-row md:gap-10 gap-[74px] grid sm:grid-cols-1 md:grid-cols-2 grid-cols-4 justify-center ml-1.5 md:ml-[0] mt-[26px] w-[99%]"
-  orientation="horizontal"
->
-  <DesktopElevenColumnOne manufacturing="Manufacturing" language="" />
-  <DesktopElevenRowvector shipping ="Shipping" language="" />
-  <DesktopElevenRowcar roadTransport="Road Transport" language="" />
-  <DesktopElevenColumnOne1 airline="Airline" language="" />
-</List>
               <Line className="bg-gray-200 h-px ml-0.5 md:ml-[0] mt-[142px] w-full" />
               <Button
                 className="cursor-pointer font-semibold leading-[normal] min-w-[243px] md:ml-[0] ml-[1366px] mt-7 text-base text-center"

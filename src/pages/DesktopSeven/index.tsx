@@ -8,12 +8,7 @@ import Dashboard from "components/Dashboard";
 // import DesktopElevenColumnOne1 from "components/DesktopElevenColumnOne1";
 // import DesktopElevenRowcar from "components/DesktopElevenRowcar";
 // import DesktopElevenRowvector from "components/DesktopElevenRowvector";
-import {
-  DesktopElevenColumnOne,
-  DesktopElevenColumnOne1,
-  DesktopElevenRowcar,
-  DesktopElevenRowvector,
-} from 'components/4button';
+
 
 import { CloseSVG } from "../../assets/images";
 
