@@ -1,7 +1,7 @@
 {
     "deployments": [
       {
-        "name": "MyAppDeployment",
+        "name": "ivms",
         "type": "webapp",
         "config": {
           "sourceDir": "build",
