@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import '@fortawesome/fontawesome-free/css/all.min.css'; // Import Font Awesome CSS
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './RadioButtons.css'; // Import a separate CSS file for custom styles
+import './RadioButtons.css';
 
 const RadioButtons = () => {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -13,15 +14,27 @@ const RadioButtons = () => {
   };
 
   const handleAdditionalOptionChange = (value) => {
-    // Toggle the selected state of the additional option
     const updatedSelection = selectedAdditionalOptions.includes(value)
       ? selectedAdditionalOptions.filter((option) => option !== value)
       : [...selectedAdditionalOptions, value];
 
     setSelectedAdditionalOptions(updatedSelection);
 
-    // Handle the selection of additional options here if needed
     console.log(`Selected additional options: ${updatedSelection.join(', ')}`);
+  };
+
+  const optionIcons = {
+    manufacturing: 'industry',
+    shipping: 'ship',
+    roadTransport: 'truck',
+    airline: 'plane',
+  };
+
+  const additionalOptionIcons = {
+    Helmet: 'hard-hat',
+    SafetyGlass: 'glasses',
+    Gloves: 'hand-paper',
+    RubberShoes: 'shoe-prints',
   };
 
   const additionalOptions = ['Helmet', 'SafetyGlass', 'Gloves', 'RubberShoes'];
@@ -29,38 +42,16 @@ const RadioButtons = () => {
   return (
     <div>
       <div className="row">
-        <div className="col-md-3">
-          <div
-            className={`rounded-box ${selectedOption === 'manufacturing' ? 'selected' : ''}`}
-            onClick={() => handleOptionChange('manufacturing')}
-          >
-            Manufacturing
+        {Object.keys(optionIcons).map((option, index) => (
+          <div key={index} className="col-md-3">
+            <div
+              className={`rounded-box ${selectedOption === option ? 'selected' : ''}`}
+              onClick={() => handleOptionChange(option)}
+            >
+              <i className={`fas fa-${optionIcons[option]}`} /> {option}
+            </div>
           </div>
-        </div>
-        <div className="col-md-3">
-          <div
-            className={`rounded-box ${selectedOption === 'shipping' ? 'selected' : ''}`}
-            onClick={() => handleOptionChange('shipping')}
-          >
-            Shipping
-          </div>
-        </div>
-        <div className="col-md-3">
-          <div
-            className={`rounded-box ${selectedOption === 'roadTransport' ? 'selected' : ''}`}
-            onClick={() => handleOptionChange('roadTransport')}
-          >
-            RoadTransport
-          </div>
-        </div>
-        <div className="col-md-3">
-          <div
-            className={`rounded-box ${selectedOption === 'airline' ? 'selected' : ''}`}
-            onClick={() => handleOptionChange('airline')}
-          >
-            Airline
-          </div>
-        </div>
+        ))}
       </div>
 
       {showAdditionalOptions && (
@@ -73,7 +64,7 @@ const RadioButtons = () => {
                 }`}
                 onClick={() => handleAdditionalOptionChange(option)}
               >
-                {option}
+                <i className={`fas fa-${additionalOptionIcons[option]}`} /> {option}
               </div>
             </div>
           ))}
