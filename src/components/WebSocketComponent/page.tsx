@@ -1,5 +1,4 @@
 import { Box, Typography } from "@mui/material";
-import Image from "next/image";
 import React, { useState } from "react";
 
 interface WebSocketComponent {
@@ -54,15 +53,14 @@ const WebSocketComponent: React.FC<WebSocketComponent> = ({
       {/* <h1>Real Frame</h1> */}
       {/* <img id="video-frame" src={videoFrame} alt="Video Frame" /> */}
       <Box style={styleImgFrame}>
-        <Image
-          src={videoFrame2}
-          id="mvideo-frame"
-          alt="Video Frame"
-          width={350}
-          height={350}
-          priority
-        />
-      </Box>
+  <img
+    src={videoFrame2}
+    id="mvideo-frame"
+    alt="Video Frame"
+    style={{ width: '100%', height: '100%' }}
+  />
+</Box>
+
 
       {optionsVisible && (
         <div id="options">

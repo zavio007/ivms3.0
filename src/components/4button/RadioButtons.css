@@ -1,0 +1,10 @@
+.rounded-box {
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 25px; /* Adjust the padding to increase height */
+    margin-bottom: 10px; /* Adjust the margin-bottom to increase space between boxes */
+    cursor: pointer;
+  }.rounded-box.selected {
+  background-color: #E0E0E0
+; /* Change the background color when selected */
+}
